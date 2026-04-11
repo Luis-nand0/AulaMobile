@@ -3,31 +3,31 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import react from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 //Criando a constante do navigator
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+//Importando a api
+import api from './src/services/api';
 
 //Import das telas do projeto
 import Home from './Screens/Home';
-// import Events from './Screens/Events';
-// import Login from './Screens/Login_screen';
-// import Myevents from './Screens/Myevents';
-// import Qrcode from './Screens/QrcodeArea';
-// import Sign from './Screens/Sign_screen';
+import Login from './Screens/Login_screen';
+import Myevents from './Screens/Myevents';
+import Sign from './Screens/Sign_screen';
 
 
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        {/* <Stack.Screen name="Event" component={Events} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="MyEvent" component={Myevents} />
-        <Stack.Screen name="Qrcode" component={Qrcode} />
-        <Stack.Screen name="Sign" component={Sign} /> */}
-      </Stack.Navigator>
+      <Drawer.Navigator initialRouteName="Eventos">
+        <Drawer.Screen name="Cadastro" component={Sign} />
+        <Drawer.Screen name="Login" component={Login} />
+        <Drawer.Screen name="Eventos" component={Home} />
+        <Drawer.Screen name="Meus Eventos" component={Myevents} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }

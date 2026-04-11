@@ -2,7 +2,7 @@
 // Objetivo: Permitir que o usúario acesse com facilidade as funções do aplicativo
 
 import React, {useState} from "react";
-import { View, TextInput, Button, Text } from "react-native-web";
+import { View, TextInput, Button, Text } from "react-native";
 
 const Home = ({navigation}) => {
     const [value, setValue] = useState('');
@@ -10,7 +10,7 @@ const Home = ({navigation}) => {
 
 return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Olá mundo</Text>
+        <Text>Página de Home</Text>
     </View>
 );
 };
